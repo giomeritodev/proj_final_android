@@ -50,7 +50,7 @@ public class CreateContatoOnClickListener implements View.OnClickListener{
                                 if(criadoComSucesso){
                                     Toast.makeText(context, "Contato incluído com sucesso.", Toast.LENGTH_LONG).show();
 
-                                    
+                                    //O código abaixo esta apresentando erro na aplicação
                                     ((MainActivity) context).contadorDeRegistros();
 
                                 }else{
