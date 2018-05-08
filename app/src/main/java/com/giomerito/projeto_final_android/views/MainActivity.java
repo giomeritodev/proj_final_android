@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 String email = obj.getEmail();
                 String telefone = obj.getTelefone();
 
-                String textViewContents = nome + " - " + email + " - " + telefone;
+                String textViewContents = "Nome: " + nome + "\n" + "Email: " + email + "\n" + "Telefone: " + telefone;
 
                 /*713268*/
                 TextView textViewContatoItem = new TextView(this);

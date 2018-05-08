@@ -95,11 +95,27 @@ public class ContatoController extends DataBaseAdapter{
         return contato;
     }
 
-    public Boolean update(Contato contato){
-        return true;
+    public boolean update(Contato contato){
+        ContentValues values = new ContentValues();
+
+        values.put("nome", contato.getNome());
+        values.put("email", contato.getEmail());
+        values.put("telefone", contato.getTelefone());
+
+        String where = "id = ?";
+
+        String[] whereArgs = { Integer.toString(contato.getId())};
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        boolean isUpdate = db.update("contatos", values, where, whereArgs) > 0;
+
+        db.close();
+
+        return isUpdate;
     }
 
-    public Boolean delete(int contatoId){
+    public boolean delete(int contatoId){
         return true;
     }
 }
