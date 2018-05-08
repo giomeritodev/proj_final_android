@@ -51,7 +51,12 @@ public class CreateContatoOnClickListener implements View.OnClickListener{
                                     Toast.makeText(context, "Contato incluído com sucesso.", Toast.LENGTH_LONG).show();
 
                                     //O código abaixo esta apresentando erro na aplicação
-                                    ((MainActivity) context).contadorDeRegistros();
+                                    try {
+                                        ((MainActivity) context).contadorDeRegistros();
+                                    } catch (Exception e) {
+                                        Toast.makeText(context, "O Contador não foi atualizado.", Toast.LENGTH_LONG).show();
+                                        e.printStackTrace();
+                                    }
 
                                 }else{
                                     Toast.makeText(context, "Não foi possivel incluir o contato.", Toast.LENGTH_LONG).show();
