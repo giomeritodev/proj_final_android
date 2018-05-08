@@ -10,6 +10,9 @@ import android.widget.Toast;
 
 import com.giomerito.projeto_final_android.controllers.ContatoController;
 import com.giomerito.projeto_final_android.models.Contato;
+import com.giomerito.projeto_final_android.views.MainActivity;
+
+import java.sql.SQLException;
 
 public class CreateContatoOnClickListener implements View.OnClickListener{
 
@@ -46,6 +49,10 @@ public class CreateContatoOnClickListener implements View.OnClickListener{
 
                                 if(criadoComSucesso){
                                     Toast.makeText(context, "Contato incluído com sucesso.", Toast.LENGTH_LONG).show();
+
+                                    
+                                    ((MainActivity) context).contadorDeRegistros();
+
                                 }else{
                                     Toast.makeText(context, "Não foi possivel incluir o contato.", Toast.LENGTH_LONG).show();
                                 }

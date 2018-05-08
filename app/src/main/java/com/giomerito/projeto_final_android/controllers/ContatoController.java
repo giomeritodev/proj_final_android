@@ -31,7 +31,14 @@ public class ContatoController extends DataBaseAdapter{
     }
 
     public int totalDeContatos(){
-        return 0;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String sql = "SELECT * FROM contatos";
+
+        int contador = db.rawQuery(sql, null).getCount();
+
+        return contador;
     }
 
     public List<Contato> listarContatos(){
