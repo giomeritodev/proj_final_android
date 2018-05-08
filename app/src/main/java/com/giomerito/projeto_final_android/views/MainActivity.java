@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
         contadorDeRegistros();
         atualizarListaDeContatos();
+
+        //new ContatoController(this).buscarContatoId();
     }
 
     public void contadorDeRegistros() {
@@ -76,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
             TextView locationItem = new TextView(this);
             locationItem.setPadding(8,8,8,8);
             locationItem.setText("Nenhum cadastro cadastrato.");
+
+            linearLayoutRecords.addView(locationItem);
         }
     }
 }

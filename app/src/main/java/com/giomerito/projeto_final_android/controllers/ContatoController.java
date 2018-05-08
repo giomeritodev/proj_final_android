@@ -73,7 +73,26 @@ public class ContatoController extends DataBaseAdapter{
     }
 
     public Contato buscarContatoId(int contatoId){
-        return null;
+
+        Contato contato = new Contato();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String sql = "SELECT * FROM contatos WHERE id = " + contatoId;
+
+        Cursor cursor = db.rawQuery(sql, null);
+
+        if(cursor.moveToFirst()){
+            String nome = cursor.getString(cursor.getColumnIndex("nome"));
+            String email = cursor.getString(cursor.getColumnIndex("email"));
+            String telefone = cursor.getString(cursor.getColumnIndex("telefone"));
+
+            contato.setId(contatoId);
+            contato.setNome(nome);
+            contato.setEmail(email);
+            contato.setTelefone(telefone);
+        }
+
+        return contato;
     }
 
     public Boolean update(Contato contato){
