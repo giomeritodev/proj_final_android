@@ -35,33 +35,44 @@ public class CreateContatoOnClickListener implements View.OnClickListener{
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                //Regras para incluir novos contatos
-                                String contatoNome = editText_nome.getText().toString();
-                                String contatoEmail = editText_email.getText().toString();
-                                String contatoTelefone = editText_telefone.getText().toString();
 
-                                Contato contato = new Contato();
-                                contato.setNome(contatoNome);
-                                contato.setEmail(contatoEmail);
-                                contato.setTelefone(contatoTelefone);
 
-                                boolean criadoComSucesso = new ContatoController(context).create(contato);
 
-                                if(criadoComSucesso){
-                                    Toast.makeText(context, "Contato incluído com sucesso.", Toast.LENGTH_LONG).show();
+                                    //Regras para incluir novos contatos
+                                    String contatoNome = editText_nome.getText().toString();
+                                    String contatoEmail = editText_email.getText().toString();
+                                    String contatoTelefone = editText_telefone.getText().toString();
 
-                                    //O código abaixo esta apresentando erro na aplicação
-                                    try {
-                                        ((MainActivity) context).contadorDeRegistros();
-                                    } catch (Exception e) {
-                                        Toast.makeText(context, "O Contador não foi atualizado.", Toast.LENGTH_LONG).show();
-                                        e.printStackTrace();
+                                if (contatoNome.equals("")) {
+                                    Toast.makeText(context, "O Campo nome não pode ser vazio!", Toast.LENGTH_LONG).show();
+                                } else if (contatoTelefone.equals("")) {
+                                    Toast.makeText(context, "O Campo telefone não pode ser vazio!", Toast.LENGTH_LONG).show();
+                                } else {
+
+                                    Contato contato = new Contato();
+                                    contato.setNome(contatoNome);
+                                    contato.setEmail(contatoEmail);
+                                    contato.setTelefone(contatoTelefone);
+
+                                    boolean criadoComSucesso = new ContatoController(context).create(contato);
+
+
+                                    if (criadoComSucesso) {
+                                        Toast.makeText(context, "Contato incluído com sucesso.", Toast.LENGTH_LONG).show();
+
+                                        //O código abaixo esta apresentando erro na aplicação
+                                        try {
+                                            ((MainActivity) context).contadorDeRegistros();
+                                        } catch (Exception e) {
+                                            Toast.makeText(context, "O Contador não foi atualizado.", Toast.LENGTH_LONG).show();
+                                            e.printStackTrace();
+                                        }
+
+                                    } else {
+                                        Toast.makeText(context, "Não foi possivel incluir o contato.", Toast.LENGTH_LONG).show();
                                     }
-
-                                }else{
-                                    Toast.makeText(context, "Não foi possivel incluir o contato.", Toast.LENGTH_LONG).show();
+                                    dialog.cancel();
                                 }
-                                dialog.cancel();
                             }
                         }).show();
     }
