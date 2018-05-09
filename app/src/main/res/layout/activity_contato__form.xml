@@ -24,7 +24,8 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@id/editText_nome"
         android:hint="Email"
-        android:singleLine="true"/>
+        android:singleLine="true"
+        android:inputType="textEmailAddress"/>
 
     <EditText
         android:id="@+id/editText_telefone"
@@ -33,6 +34,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@id/editText_email"
         android:hint="Telefone"
-        android:singleLine="true"/>
+        android:singleLine="true"
+        android:inputType="number"/>
 
 </RelativeLayout>
