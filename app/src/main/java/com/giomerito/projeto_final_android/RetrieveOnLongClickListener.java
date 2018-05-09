@@ -3,7 +3,6 @@ package com.giomerito.projeto_final_android;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -35,6 +34,22 @@ public class RetrieveOnLongClickListener implements View.OnLongClickListener{
                             editContatoPeloId(Integer.parseInt(id));
                         }else if(item == 1){
                             //Deletar
+
+                            boolean isDeletouComSucesso = new ContatoController(context).delete(Integer.parseInt(id));
+
+                            if(isDeletouComSucesso){
+                                Toast.makeText(context, "Contato deletado.", Toast.LENGTH_LONG).show();
+
+                                ((MainActivity) context).atualizarListaDeContatos();
+                                try {
+                                    ((MainActivity) context).contadorDeRegistros();
+                                }catch(Exception e){
+                                    Toast.makeText(context, "Não foi possivel atualizar o contador", Toast.LENGTH_LONG).show();
+                                    e.printStackTrace();
+                                }
+                            }else{
+                                Toast.makeText(context, "Erro ao deletar contato.", Toast.LENGTH_LONG).show();
+                            }
                         }
                         dialog.dismiss();
                     }

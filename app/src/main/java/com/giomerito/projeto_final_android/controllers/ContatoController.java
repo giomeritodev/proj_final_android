@@ -116,6 +116,13 @@ public class ContatoController extends DataBaseAdapter{
     }
 
     public boolean delete(int contatoId){
-        return true;
+
+        boolean isDelete = false;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        isDelete = db.delete("contatos", "id = '" + contatoId + "'", null) > 0;
+        db.close();
+
+        return isDelete;
     }
 }
