@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "761265013840",
+    "firebase_url": "https://trabalhoandroid-fff9a.firebaseio.com",
+    "project_id": "trabalhoandroid-fff9a",
+    "storage_bucket": "trabalhoandroid-fff9a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761265013840:android:48ed7e1e852c720f",
+        "android_client_info": {
+          "package_name": "com.giomerito.projeto_final_android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "761265013840-kabjukdnb6jkp52jf4cnh8mm9r5rla8d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.giomerito.projeto_final_android",
+            "certificate_hash": "d28d8f804374df9826589f1d1f9d40bc60db509b"
+          }
+        },
+        {
+          "client_id": "761265013840-iat10qjmcsgo23r5kriv5f20nj5jp3qs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGB-Trv_E5fERWreP8sF6RX-wfhrszGIo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "761265013840-iat10qjmcsgo23r5kriv5f20nj5jp3qs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

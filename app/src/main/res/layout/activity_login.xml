@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".views.LoginActivity"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:id="@+id/textView_login_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_sistema_login_tela"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/margin_top"/>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout_login_design"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_left"
+        android:layout_marginRight="@dimen/margin_right"
+        android:layout_marginTop="@dimen/margin_top"
+        android:background="@color/colorWhite"
+        android:padding="@dimen/padding_relative_login">
+
+        <EditText
+            android:id="@+id/editText_login_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_campos_login"
+            android:hint="Digite seu usuario/email"
+            android:inputType="textEmailAddress"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editText_login_senha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editText_login_email"
+            android:layout_marginTop="@dimen/margin_top_campos_login"
+            android:hint="Informe sua senha"
+            android:textSize="20sp"
+            android:inputType="textPassword"/>
+
+
+        <Button
+            android:id="@+id/button_login_logar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editText_login_senha"
+            android:layout_marginTop="@dimen/margin_top_campos_login"
+            android:background="@color/colorGreen"
+            android:text="@string/text_button_login_logar"
+            android:textColor="@color/colorWhite" />
+
+        <Button
+            android:id="@+id/button_login_cadastra_se"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/button_login_logar"
+            android:text="@string/text_button_registrar"
+            android:background="@null"/>
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button_login_esqueci_a_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_button_login_esqueci_a_senha"
+        android:background="@null"/>
+
+
+</LinearLayout>

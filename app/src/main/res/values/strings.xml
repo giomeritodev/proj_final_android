@@ -2,4 +2,14 @@
     <string name="app_name">projeto_final_android</string>
     <string name="button_criar_contato">Novo contato</string>
     <string name="nome_projeto">Sistema de contatos</string>
+    <string name="edit_text_email">Informe email cadastrado</string>
+    <string name="text_sistema_login_tela">Logar no sistema</string>
+    <string name="text_button_login_logar">Logar</string>
+    <string name="text_button_registrar">Registra-se</string>
+    <string name="text_button_login_esqueci_a_senha">Esqueci a senha</string>
+    <string name="cadastrar_usuario_titulo">Cadastrar usuario</string>
+    <string name="cadastrar_usuario_email">Informe um email</string>
+    <string name="cadastrar_usuario_senha">Informe uma senha minimo 6 caracteres</string>
+    <string name="button_cadastrar_usuario_cadastrar">Cadastrar</string>
+    <string name="button_cadastrar_usuario_cancelar">Cancelar</string>
 </resources>

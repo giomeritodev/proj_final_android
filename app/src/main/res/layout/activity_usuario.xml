@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:id="@+id/editText_cadastro_usuario_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cadastrar_usuario_titulo"
+        android:gravity="center"
+        android:textSize="@dimen/textSize_texto_titulo"/>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout_form_cadastro_usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_relative_login"
+        android:layout_marginLeft="@dimen/margin_left"
+        android:layout_marginRight="@dimen/margin_right"
+        android:layout_marginTop="@dimen/margin_top"
+        android:layout_marginBottom="@dimen/margin_bottom"
+        android:background="@color/colorSilver">
+
+        <EditText
+            android:id="@+id/editText_cadastro_usuario_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/cadastrar_usuario_email"
+            android:textSize="@dimen/textSize_usuario_texto_login"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="@dimen/margin_top_campos_login"/>
+
+        <EditText
+            android:id="@+id/editText_cadastro_usuario_senha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editText_cadastro_usuario_email"
+            android:textSize="@dimen/textSize_usuario_texto_login"
+            android:inputType="textPassword"
+            android:hint="@string/cadastrar_usuario_senha"
+            android:layout_marginTop="@dimen/margin_top_campos_login"/>
+
+        <Button
+            android:id="@+id/button_cadastro_usuario_cadastrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editText_cadastro_usuario_senha"
+            android:layout_marginLeft="@dimen/margin_left"
+            android:layout_marginRight="@dimen/margin_right"
+            android:layout_marginTop="@dimen/margin_top_campos_login"
+            android:textColor="@color/colorWhite"
+            android:text="@string/button_cadastrar_usuario_cadastrar"
+            android:background="@color/colorGreen"/>
+
+        <Button
+            android:id="@+id/button_cadastro_usuario_cancelar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_left"
+            android:layout_marginRight="@dimen/margin_right"
+            android:layout_below="@id/button_cadastro_usuario_cadastrar"
+            android:text="@string/button_cadastrar_usuario_cancelar"
+            android:background="@null"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

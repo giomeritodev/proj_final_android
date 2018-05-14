@@ -16,10 +16,12 @@ import java.sql.SQLException;
 
 public class CreateContatoOnClickListener implements View.OnClickListener{
 
+    Context context;
+
     @Override
     public void onClick(View v) {
 
-        final Context context = v.getContext();
+        context = v.getContext();
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final View formElementsView = inflater.inflate(R.layout.activity_contato__form, null, false);
@@ -36,17 +38,15 @@ public class CreateContatoOnClickListener implements View.OnClickListener{
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
 
-
-
                                     //Regras para incluir novos contatos
                                     String contatoNome = editText_nome.getText().toString();
                                     String contatoEmail = editText_email.getText().toString();
                                     String contatoTelefone = editText_telefone.getText().toString();
 
                                 if (contatoNome.equals("")) {
-                                    Toast.makeText(context, "O Campo nome não pode ser vazio!", Toast.LENGTH_LONG).show();
+                                    alerta("O Campo nome não pode ser vazio!");
                                 } else if (contatoTelefone.equals("")) {
-                                    Toast.makeText(context, "O Campo telefone não pode ser vazio!", Toast.LENGTH_LONG).show();
+                                    alerta("O Campo telefone não pode ser vazio!");
                                 } else {
 
                                     Contato contato = new Contato();
@@ -58,23 +58,29 @@ public class CreateContatoOnClickListener implements View.OnClickListener{
 
 
                                     if (criadoComSucesso) {
-                                        Toast.makeText(context, "Contato incluído com sucesso.", Toast.LENGTH_LONG).show();
+                                        alerta("Contato incluído com sucesso.");
 
-                                        //O código abaixo esta apresentando erro na aplicação
+                                        //TODO O código abaixo esta apresentando erro na aplicação
                                         try {
                                             ((MainActivity) context).contadorDeRegistros();
+                                            ((MainActivity) context).atualizarListaDeContatos();
                                         } catch (Exception e) {
-                                            Toast.makeText(context, "O Contador não foi atualizado.", Toast.LENGTH_LONG).show();
+                                            alerta("Os dados não foram atualizados \n para visualização.");
                                             e.printStackTrace();
                                         }
 
                                     } else {
-                                        Toast.makeText(context, "Não foi possivel incluir o contato.", Toast.LENGTH_LONG).show();
+                                        alerta("Não foi possivel incluir o contato.");
                                     }
+
                                     dialog.cancel();
                                 }
                             }
                         }).show();
+    }
+
+    public void alerta(String msg){
+        Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
     }
 
 }
