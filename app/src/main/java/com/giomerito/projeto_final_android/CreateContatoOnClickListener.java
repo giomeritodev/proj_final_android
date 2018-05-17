@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.giomerito.projeto_final_android.controllers.ContatoController;
@@ -29,6 +30,7 @@ public class CreateContatoOnClickListener implements View.OnClickListener{
         final EditText editText_nome = formElementsView.findViewById(R.id.editText_nome);
         final EditText editText_email = formElementsView.findViewById(R.id.editText_email);
         final EditText editText_telefone = formElementsView.findViewById(R.id.editText_telefone);
+
 
         new AlertDialog.Builder(context)
                 .setView(formElementsView)

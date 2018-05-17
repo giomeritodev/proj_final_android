@@ -1,11 +1,14 @@
 package com.giomerito.projeto_final_android.models;
 
+import android.media.Image;
+
 public class Contato {
 
     private Integer id;
     private String nome;
     private String email;
     private String telefone;
+
 
     public Contato(){}
 
@@ -40,4 +43,5 @@ public class Contato {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
+
 }

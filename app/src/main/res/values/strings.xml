@@ -12,4 +12,5 @@
     <string name="cadastrar_usuario_senha">Informe uma senha minimo 6 caracteres</string>
     <string name="button_cadastrar_usuario_cadastrar">Cadastrar</string>
     <string name="button_cadastrar_usuario_cancelar">Cancelar</string>
+    <string name="titulo_login">Logar no sistema</string>
 </resources>
