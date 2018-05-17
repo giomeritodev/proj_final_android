@@ -65,9 +65,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemClicked = item.getItemId();
-        if(itemClicked == R.id.itemMen_novo_contato){
-
-        }else if(itemClicked == R.id.itemMenu_logout){
+        if(itemClicked == R.id.itemMenu_logout){
             Intent intent = new Intent(this, LoginActivity.class);
             auth.getInstance().signOut();
             finish();
